@@ -41,7 +41,7 @@ locals {
 
 resource "google_bigquery_job" "job" {
   project = module.project-services.project_id
-  job_id  = "${local.env}_${locals.parsed_timestamp}"
+  job_id  = "${local.env}_${local.parsed_timestamp}"
 
   labels = {
     "env" = local.env
