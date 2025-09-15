@@ -44,7 +44,7 @@ rules:
     ignore_null: false
     threshold: 0.99
     range_expectation:
-      max_value: '3'
+      max_value: '4'
       # min_value:
       strict_max_enabled: false
       strict_min_enabled: false
