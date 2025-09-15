@@ -18,6 +18,7 @@ module "deploy-prod" {
   source_project = var.source_project
   source_table = var.source_table
   job_location = var.job_location
+  schema_file = var.schema_file
   project_id             = "neat-striker-447409-t5"
   data_quality_spec_file = "rules/orders.prod.yaml"
   environment            = "prod"
