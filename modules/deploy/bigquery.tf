@@ -35,16 +35,21 @@ resource "google_bigquery_table" "table" {
   schema = file("${path.module}/${var.schema_file}")
 }
 
+locals {
+  parsed_timestamp = formatdate("DDMMYYYY-HHmmss", timestamp())
+}
+
 resource "google_bigquery_job" "job" {
   project = module.project-services.project_id
-  job_id  = "${local.env}_${random_id.id.hex}"
-
+  job_id  = "${local.env}_${local.parsed_timestamp}"
+  location = var.job_location
+  
   labels = {
     "env" = local.env
   }
 
   query {
-    query = "SELECT * FROM `${var.source_project}.${var.source_dataset}.${var.source_table}"
+    query = "SELECT * FROM `${var.source_project}.${var.source_dataset}.${var.source_table}`"
 
     destination_table {
       project_id = google_bigquery_table.table.project

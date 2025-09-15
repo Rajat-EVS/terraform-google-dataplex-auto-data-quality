@@ -14,7 +14,11 @@
 
 module "deploy-dev" {
   source                 = "../../modules/deploy"
-  project_id             = "PROJECT_ID"
+  source_dataset = var.source_dataset
+  source_project = var.source_project
+  source_table = var.source_table
+  job_location = var.job_location
+  project_id             = "neat-striker-447409-t5"
   data_quality_spec_file = "rules/orders.dev.yaml"
   environment            = "dev"
 }

@@ -14,7 +14,7 @@
 
 module "deploy-prod" {
   source                 = "../../modules/deploy"
-  project_id             = "PROJECT_ID"
+  project_id             = "neat-striker-447409-t5"
   data_quality_spec_file = "rules/orders.dev.yaml"
   environment            = "prod"
 }

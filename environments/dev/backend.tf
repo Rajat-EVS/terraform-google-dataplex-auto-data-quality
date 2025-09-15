@@ -14,6 +14,6 @@
 
 terraform {
   backend "gcs" {
-    bucket = "PROJECT_ID-tfstate-dev"
+    bucket = "neat-striker-447409-t5-tfstate-dev"
   }
 }
