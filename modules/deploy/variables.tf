@@ -23,6 +23,12 @@ variable "region" {
   default     = "us-central1"
 }
 
+variable "job_location" {
+  type = string
+  description = "Location required for bigquery job"
+  default = "us-central1"
+}
+
 variable "labels" {
   type        = map(string)
   description = "A map of labels to apply to contained resources."
