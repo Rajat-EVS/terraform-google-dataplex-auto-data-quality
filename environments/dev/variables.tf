@@ -16,4 +16,11 @@ variable "source_table" {
 variable "job_location" {
   type = string
   description = "Location required for bigquery job"
+  default = "us-central1"
+}
+
+variable "schema_file" {
+  type        = string
+  description = "Schema file for table"
+  default     = "schemas/orders_schema.json"
 }
